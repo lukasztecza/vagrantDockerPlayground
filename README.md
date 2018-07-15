@@ -25,16 +25,16 @@ docker swarm init
 bash deploy.sh
 ```
 
-- Add to your `/etc/hosts`
+- Add to your `/etc/hosts` - it is needed as nginx will be configured to grab app name from domain name
 ```
 127.0.0.1 www.rest-app.com
 ```
 
 - Several dev urls should be available now
 ```
-network (1x) docker visualizer under localhost:8080
-rest-app (2x) under www.rest-app.com:8000
-web-server (1x) sample asset under www.rest-app.com:8000/assets/blah.png
+network docker visualizer under: localhost:8080
+rest-app under: www.rest-app.com:8000
+web-server sample asset under: www.rest-app.com:8000/assets/blah.png
 ```
 
 - If you go and see rest-app you will see that hostname indicates container id that was used
