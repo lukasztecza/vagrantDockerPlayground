@@ -1,4 +1,4 @@
 .vagrant
-./network
-./rest-app
-./web-server
+network/*
+rest-app/*
+web-server/*

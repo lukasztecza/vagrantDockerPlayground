@@ -21,7 +21,7 @@ fi
 if [ ! -d web-server ]; then
     git clone https://github.com/lukasztecza/dockerWebServer.git web-server;
     cd web-server;
-    docker build -t web-server;
+    docker build -t web-server .;
     cd ..;
 fi
 
