@@ -40,5 +40,5 @@ web-server sample asset under: www.rest-app.com:8000/assets/blah.png
 - If you go and see rest-app you will see that hostname indicates container id that was used
 - You can play around and scale it up to 5 containers with
 ```
-docker service scale <rest-app-service-here>=5
+docker service scale rest-app-stack_rest-app=5
 ```
