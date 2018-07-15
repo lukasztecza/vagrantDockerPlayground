@@ -1,4 +1,8 @@
 #!/bin/bash
+if [ "$(whoami)" != "vagrant" ]; then
+   echo "Run this script from inside vagrant machine";exit;
+fi
+
 if [ "$1" == "" ]; then
     echo "Please specify one of the stacks do deploy or type all to deploy everything";exit;
 fi
@@ -16,17 +20,17 @@ deploy_helper() {
     fi
 }
 
-if [ "$1" == "all" ] || [ "$1" == "network-stack" ]; then
+if [ "$1" == "all" ] || [ "$1" == "network" ]; then
     docker stack deploy -c network/docker-compose.yml network-stack;
     deployed=$((deployed + 1));
 fi
 
-if [ "$1" == "all" ] || [ "$1" == "rest-app-stack" ]; then
+if [ "$1" == "all" ] || [ "$1" == "rest-app" ]; then
     deploy_helper rest-app
     deployed=$((deployed + 1));
 fi
 
-if [ "$1" == "all" ] || [ "$1" == "web-server-stack" ]; then
+if [ "$1" == "all" ] || [ "$1" == "web-server" ]; then
     deploy_helper web-server
     deployed=$((deployed + 1));
 fi
